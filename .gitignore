@@ -1,0 +1,10 @@
+env
+data/
+models/
+warehouse/
+volumes/
+*.jar
+__pycache__/
+.ivy2/
+.sparkStaging/
+*.log

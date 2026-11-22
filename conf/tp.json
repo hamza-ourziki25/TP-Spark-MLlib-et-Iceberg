@@ -1,0 +1,8 @@
+{
+ "minio_endpoint": "http://minio:9000",
+ "minio_access_key": "tp2admin",
+ "minio_secret_key": "password",
+ "mysql_uri": "jdbc:mysql://mysql:3306/iceberg_catalog",
+ "mysql_user": "iceberg_tp",
+ "mysql_password": "password"
+}
