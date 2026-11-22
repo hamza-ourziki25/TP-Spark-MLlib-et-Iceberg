@@ -80,7 +80,6 @@ docker network inspect hadoop
 │   ├── check.py            # test d'écriture/lecture Iceberg
 │   ├── prepare.py          # Bronze -> Silver (qualité, rejets, MERGE)
 │   ├── train.py            # entraînement, évaluation, publication Gold
-│   └── analyse.py          # comparaison des demandes moyennes 2011 / 2012
 └── rapport/
     ├── reponses.md         # réponses aux questions
     └── captures.pdf        # captures d'écran de toutes les étapes
@@ -153,7 +152,6 @@ Le connecteur Hadoop AWS déjà présent dans l'image est conservé. Le lanceur 
 .\lancer.ps1 check.py      # test de connexion : doit afficher la valeur 1
 .\lancer.ps1 prepare.py    # Bronze -> Silver
 .\lancer.ps1 train.py      # entraînement, évaluation, Gold
-.\lancer.ps1 analyse.py    # demande moyenne 2011 vs 2012
 ```
 
 ## 8. Méthode
@@ -208,7 +206,6 @@ Constats :
 
 - Aucun des trois modèles ne bat la référence simple sur 2012.
 - Les plus grosses erreurs concernent les heures de pointe (8 h, 17 h, 18 h, 19 h) des jours travaillés, systématiquement sous-estimées.
-- Explication probable (à confirmer avec `analyse.py`) : la demande a augmenté entre 2011 et 2012, alors que les modèles n'ont appris que sur 2011 et ne disposent pas de variable d'année ou de tendance. Les arbres ne peuvent pas prédire au-delà des valeurs vues à l'apprentissage.
 
 Ces résultats sont une évaluation rétrospective ; ils ne garantissent pas la performance future.
 
